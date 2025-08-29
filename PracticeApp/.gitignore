@@ -1,0 +1,32 @@
+# IntelliJ IDEA / Android Studio - Complete IDE exclusion
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Gradle
+.gradle/
+build/
+
+# Local configuration
+local.properties
+
+# Generated files
+*.apk
+*.aab
+*.dex
+*.class
+bin/
+gen/
+out/
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
