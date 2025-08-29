@@ -16,7 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "DATA_API", "\"https://whbmj712tf.execute-api.us-west-1.amazonaws.com/\"")
+        buildConfigField("String", "DATA_API", "\"https://6yq0uer9q2.execute-api.us-west-1.amazonaws.com/artAPI\"")
     }
 
     buildTypes {
