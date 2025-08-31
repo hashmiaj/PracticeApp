@@ -42,7 +42,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil3.compose.AsyncImage
+import coil.compose.AsyncImage
 import com.cftc.PracticeApp.viewmodel.UserViewModel
 
 @Composable
@@ -63,7 +63,7 @@ fun UserProfileSettingsScreen() {
         } else {
             LazyColumn(
                 Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(16.dp),
+                contentPadding = PaddingValues(all = 32.dp),
                 verticalArrangement = Arrangement.spacedBy(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
@@ -73,6 +73,7 @@ fun UserProfileSettingsScreen() {
                         model = state.userData?.imageUrl,
                         contentDescription = "Profile picture of ${state.userData?.name}",
                         modifier = Modifier
+                            .padding(top = 16.dp)
                             .size(100.dp)
                             .clip(CircleShape),
                         contentScale = ContentScale.Crop
@@ -164,7 +165,7 @@ fun SettingsOption(
     Row(
         Modifier.padding(8.dp),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
+        horizontalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Icon(
             imageVector = iconImageVector,
