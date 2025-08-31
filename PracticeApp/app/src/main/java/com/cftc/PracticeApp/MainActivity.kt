@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.cftc.PracticeApp.ui.AiModelsScreen
 import com.cftc.PracticeApp.ui.theme.PracticeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             PracticeAppTheme {
-                MainScreen()
+                AiModelsScreen()
             }
         }
     }
