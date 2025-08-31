@@ -86,6 +86,7 @@ fun AiModelsScreen() {
                         CircularProgressIndicator()
                     }
                 }
+
                 state.error != null -> {}
                 state.showEmpty -> EmptyListView()
                 else -> AiModelsGrid(models = state.visible)
@@ -96,7 +97,11 @@ fun AiModelsScreen() {
 
 @Composable
 fun TopBar(title: String) {
-    Text(text = title, style = MaterialTheme.typography.headlineLarge, modifier = Modifier.padding(32.dp))
+    Text(
+        text = title,
+        style = MaterialTheme.typography.headlineLarge,
+        modifier = Modifier.padding(32.dp)
+    )
 }
 
 
@@ -106,7 +111,10 @@ private fun CategoryChips(
     onSelect: (ModelCategory) -> Unit
 ) {
     val cats =
-        listOf(ModelCategory.All, ModelCategory.Vision, ModelCategory.Language, ModelCategory.Audio)
+        listOf(
+            ModelCategory.All, ModelCategory.Vision, ModelCategory.Language, ModelCategory.Audio,
+            ModelCategory.Empty
+        )
     LazyRow(
         Modifier
             .fillMaxWidth()
