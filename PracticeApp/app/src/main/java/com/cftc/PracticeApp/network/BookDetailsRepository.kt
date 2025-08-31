@@ -1,0 +1,27 @@
+package com.cftc.PracticeApp.network
+
+import com.cftc.PracticeApp.model.BookDetailsModel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+
+class BookDetailsRepository() {
+    private val _cachedBookDetails = MutableStateFlow<List<BookDetailsModel>>(emptyList())
+    val cachedBookDetails: StateFlow<List<BookDetailsModel>> = _cachedBookDetails
+
+    suspend fun getBookDetails(): BookDetailsModel {
+        delay(2000)
+        val book = BookDetailsModel(
+            id = "1",
+            imageUrl = "https://plus.unsplash.com/premium_photo-1669652639337-c513cc42ead6?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            title = "The Great Gatsby",
+            author = "E. Scott Fitzgerald",
+            rating = "4.8",
+            reviewsCount = 239,
+            genresList = listOf("Fiction", "Classics", "1920", "Fiction", "Classics", "1920", "Fiction", "Classics", "1920"),
+            description = "The Great Gatsby by F. Scott Fitzgerald is a classic novel set in 1920s America during the height of the Jazz Age. It tells the story of Jay Gatsby, a wealthy but mysterious man who throws extravagant parties in hopes of rekindling his past love with Daisy Buchanan, a woman married to the arrogant Tom Buchanan. Narrated by Nick Carraway, Gatsby’s neighbor and Daisy’s cousin, the novel explores themes of wealth, obsession, illusion, and the American Dream. Beneath the glittering surface of luxury and excess lies a tale of longing, disillusionment, and the tragic cost of chasing an idealized past. The Great Gatsby by F. Scott Fitzgerald is a classic novel set in 1920s America during the height of the Jazz Age. It tells the story of Jay Gatsby, a wealthy but mysterious man who throws extravagant parties in hopes of rekindling his past love with Daisy Buchanan, a woman married to the arrogant Tom Buchanan. Narrated by Nick Carraway, Gatsby’s neighbor and Daisy’s cousin, the novel explores themes of wealth, obsession, illusion, and the American Dream. Beneath the glittering surface of luxury and excess lies a tale of longing, disillusionment, and the tragic cost of chasing an idealized past. The Great Gatsby by F. Scott Fitzgerald is a classic novel set in 1920s America during the height of the Jazz Age. It tells the story of Jay Gatsby, a wealthy but mysterious man who throws extravagant parties in hopes of rekindling his past love with Daisy Buchanan, a woman married to the arrogant Tom Buchanan. Narrated by Nick Carraway, Gatsby’s neighbor and Daisy’s cousin, the novel explores themes of wealth, obsession, illusion, and the American Dream. Beneath the glittering surface of luxury and excess lies a tale of longing, disillusionment, and the tragic cost of chasing an idealized past. The Great Gatsby by F. Scott Fitzgerald is a classic novel set in 1920s America during the height of the Jazz Age. It tells the story of Jay Gatsby, a wealthy but mysterious man who throws extravagant parties in hopes of rekindling his past love with Daisy Buchanan, a woman married to the arrogant Tom Buchanan. Narrated by Nick Carraway, Gatsby’s neighbor and Daisy’s cousin, the novel explores themes of wealth, obsession, illusion, and the American Dream. Beneath the glittering surface of luxury and excess lies a tale of longing, disillusionment, and the tragic cost of chasing an idealized past. The Great Gatsby by F. Scott Fitzgerald is a classic novel set in 1920s America during the height of the Jazz Age. It tells the story of Jay Gatsby, a wealthy but mysterious man who throws extravagant parties in hopes of rekindling his past love with Daisy Buchanan, a woman married to the arrogant Tom Buchanan. Narrated by Nick Carraway, Gatsby’s neighbor and Daisy’s cousin, the novel explores themes of wealth, obsession, illusion, and the American Dream. Beneath the glittering surface of luxury and excess lies a tale of longing, disillusionment, and the tragic cost of chasing an idealized past. The Great Gatsby by F. Scott Fitzgerald is a classic novel set in 1920s America during the height of the Jazz Age. It tells the story of Jay Gatsby, a wealthy but mysterious man who throws extravagant parties in hopes of rekindling his past love with Daisy Buchanan, a woman married to the arrogant Tom Buchanan. Narrated by Nick Carraway, Gatsby’s neighbor and Daisy’s cousin, the novel explores themes of wealth, obsession, illusion, and the American Dream. Beneath the glittering surface of luxury and excess lies a tale of longing, disillusionment, and the tragic cost of chasing an idealized past. The Great Gatsby by F. Scott Fitzgerald is a classic novel set in 1920s America during the height of the Jazz Age. It tells the story of Jay Gatsby, a wealthy but mysterious man who throws extravagant parties in hopes of rekindling his past love with Daisy Buchanan, a woman married to the arrogant Tom Buchanan. Narrated by Nick Carraway, Gatsby’s neighbor and Daisy’s cousin, the novel explores themes of wealth, obsession, illusion, and the American Dream. Beneath the glittering surface of luxury and excess lies a tale of longing, disillusionment, and the tragic cost of chasing an idealized past.",
+            isInList = false,
+        )
+        return book
+    }
+}
