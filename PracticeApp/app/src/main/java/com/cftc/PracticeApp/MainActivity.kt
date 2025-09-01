@@ -14,6 +14,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavType
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.cftc.PracticeApp.ui.BookDetailScreen
+import com.cftc.PracticeApp.ui.BooksListScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,19 +35,25 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun MainScreen() {
-    Surface(
-        modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
+    val navController = rememberNavController()
+
+    NavHost(
+        navController = navController,
+        startDestination = "booksListScreen"
     ) {
-        Box(
-            modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
-        ) {
-            Text(
-                text = "Hello Compose!",
-                style = MaterialTheme.typography.headlineMedium,
-                modifier = Modifier.padding(16.dp)
-            )
+        composable("booksListScreen") {
+            BooksListScreen(onBookClick = { bookId ->
+                navController.navigate("bookDetailScreen/$bookId")
+            })
+        }
+        composable(
+            "bookDetailScreen/{bookId}",
+            arguments = listOf(navArgument("bookId") { type = NavType.StringType })
+        ) { backStackEntry ->
+            val bookId = backStackEntry.arguments?.getString("bookId") ?: ""
+            BookDetailScreen(id = bookId, onBackClick = {
+                navController.popBackStack()
+            })
         }
     }
 }
