@@ -30,6 +30,14 @@ class FitnessClassViewModel() : ViewModel() {
         }
     }
 
+    fun refresh() {
+        viewModelScope.launch {
+            _state.update { it.copy(isLoading = true) }
+            val fresh = repo.getClasses()
+            _state.update { it.copy(isLoading = false, classList = fresh) }
+        }
+    }
+
     fun selectCategory(selected: ClassCategory) {
         _state.update { it.copy(selected = selected) }
     }
