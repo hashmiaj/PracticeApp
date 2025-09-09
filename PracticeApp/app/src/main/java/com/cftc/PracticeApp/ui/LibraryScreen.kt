@@ -162,7 +162,7 @@ fun BookCard(
             IconButton(onClick = {
                 onFavoriteToggle(book.id)
                 scope.launch {
-                    snackbar.showSnackbar(if (book.isFavorited) "Removed to favorites" else "Added from favorites")
+                    snackbar.showSnackbar(if (book.isFavorited) "Removed from favorites" else "Added to favorites")
                 }
             }) {
                 Icon(
